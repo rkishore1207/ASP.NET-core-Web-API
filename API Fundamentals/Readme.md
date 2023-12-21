@@ -393,3 +393,31 @@ setupAction.IncludeXmlComments(xmlCommentsFullPath);
 ```C#
 /// <response code="200">Returns the requested city</response>
 ```
+
+## Enums
+* It is a strongly typed constants.
+* If the program uses lot of integral numbers then it is less readable and maintainable that is usage of switch case.
+* Enum is the user defined datatype and have list of strings.
+* It should allow only those strings to itself.
+```C#
+public enum Regions
+{
+    CET,
+    GST,
+    IST,
+    ACWST,
+    ART,
+    VET,
+    MART
+}
+
+
+string? enteredInput = Console.ReadLine();
+if (Enum.IsDefined(typeof(RegionsEnum.Regions), enteredInput.ToUpper()))
+{
+    region = (RegionsEnum.Regions)Enum.Parse(typeof(RegionsEnum.Regions),enteredInput.ToUpper(), true);
+    break;
+}
+else
+    Console.WriteLine("Please enter the listed Time Zones");
+```
